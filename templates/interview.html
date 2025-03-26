@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Questions</title>
+    <link rel="stylesheet" href="static/interview.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Interview Questions For You ✌️</h1>
+    
+    {% if q_list %}
+    <div id="questions-list">
+        {% for question in q_list %}
+        <div class="question">
+            <p class="question-text"><strong>Q.</strong> {{ question }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    
+    <div class="button-container">
+        <a href="/" class="nav-button">Upload Another Resume</a>
+        <a href="/ats_matcher" class="nav-button">Check ATS Score</a>
+    </div>
+</body>
+</html>

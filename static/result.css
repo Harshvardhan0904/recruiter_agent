@@ -1,0 +1,163 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #171717;
+}
+
+h1 {
+    color: #3fc0ff;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #3498db;
+    margin-bottom: 25px;
+}
+
+.resume-section {
+    margin-bottom: 20px;
+    background-color: #2b2b2b;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    color: #2980b9;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    color: white;
+}
+
+.section-content {
+    margin-left: 10px;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.contact-item {
+    padding: 5px 10px;
+    background-color: #6dca8491;
+    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.project-item, .experience-item {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.project-item:last-child, .experience-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.project-title, .job-title {
+    font-weight: bold;
+    color: #5ce3b1;
+    margin-bottom: 5px;
+}
+
+.project-description {
+    margin-top: 5px;
+    color: #fff;
+}
+
+.project-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.tool-item {
+    background-color: #e8f5e9;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: #2e7d32;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-item {
+    background-color: #6e6be18a;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.job-company {
+    font-weight: 500;
+    color: #1872ff;
+}
+
+.company-projects {
+    margin-top: 10px;
+}
+
+.company-project {
+    margin-bottom: 12px;
+    padding-left: 10px;
+    border-left: 2px solid #eee;
+}
+
+.company-project:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: #2980b9;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+    
+    .resume-section {
+        padding: 12px;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .skill-list {
+        flex-direction: column;
+        gap: 5px;
+    }
+}

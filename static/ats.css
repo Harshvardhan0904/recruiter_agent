@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Arbutus&family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=Fontdiner+Swanky&family=Girassol&family=Give+You+Glory&family=Goldman:wght@400;700&family=Leckerli+One&family=Nosifer&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Vinyl&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Uncial+Antiqua&family=Zen+Dots&display=swap');
+
+:root {
+    --primary-color: #5e91f8;
+    --secondary-color: #2ecc71;
+    --background-light: #f0f4f8;
+    --text-dark: #ffffff;
+    --card-background: #1e1e1e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(20, 20, 20);
+    color: #000;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 700px;
+    padding: 40px;
+    transition: all 0.3s ease;
+}
+
+#suggestionBox {
+    margin: 2rem 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.suggestions-container {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #4e73df;
+    transition: all 0.3s ease;
+}
+
+
+.suggestions-container p {
+    color: #2d3748;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.suggestions-container p::before {
+    content: "💡";
+    margin-right: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.suggestions-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.suggestions-container li {
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    position: relative;
+    padding-left: 2rem;
+    transition: all 0.2s ease;
+}
+
+
+
+h1 {
+    font-family: 'Bebas Neue';
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-weight: 600;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    resize: vertical;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.button-group button {
+    font-family: 'Poppins';
+    flex: 1;
+    display: block;
+    padding: 15px;
+    background: linear-gradient(135deg, #77e387, #6e8efb);
+    color: rgb(204, 204, 204);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+    height: 30%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+.button-group button a{
+    text-decoration: none;
+
+    color: rgb(234, 234, 234);
+}
+.skills-list {
+    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Adds spacing between skill tags */
+    max-width: 100%; /* Ensures it doesn't overflow */
+    padding: 10px;
+    overflow-y: auto; /* Adds scroll if content overflows */
+    max-height: 200px; /* Adjust height as needed */
+}
+
+.skill-tag {
+    background-color: #7bfdad6c;
+    border: 1px solid greenyellow;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap; /* Keeps each skill in one line */
+}
+
+.button-group button:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.2);
+}
+
+#generateQuestions {
+    background-color: var(--secondary-color);
+}
+
+#generateQuestions:hover {
+    background-color: #27ae60;
+}
+
+#resultArea, #questionsArea {
+    background-color: var(--background-light);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+#scoreDisplay {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+#matchedSkillsList, #generatedQuestions {
+    margin-top: 10px;
+    color: var(--text-dark);
+}
+
+#generatedQuestions li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        margin: 0 10px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+}

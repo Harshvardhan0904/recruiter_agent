@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/result.css">
+    <title>Resume Analysis Result</title>
+</head>
+
+<body>
+    <h1>Resume Analysis Result</h1>
+
+    <div class="resume-section">
+        <div class="section-title">Personal Information</div>
+        <div class="section-content">
+            <p><strong>Full Name:</strong> {{ name }}</p>
+            <div class="contact-info">
+                {% if email %}
+                <div class="contact-item">
+                    <span>📧 {{ email }}</span>
+                </div>
+                {% endif %}
+
+                {% if phone %}
+
+                <div class="contact-item">
+                    <span>📱 {{ phone }}</span>
+                </div>
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="resume-section">
+        <div class="section-title">Skills</div>
+        <div class="section-content">
+            <ul class="skill-list">
+                {% if skills is string %}
+                <li class="skill-item">{{ skills }}</li>
+                {% else %}
+                {% for skill in skills %}
+                <li class="skill-item">{{ skill }}</li>
+                {% endfor %}
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="resume-section">
+        <div class="section-title">Certifications</div>
+        <div class="section-content">
+            <ul>
+                {% if certifications is string %}
+                <li>{{ certifications }}</li>
+                {% else %}
+                {% for cert in certifications %}
+                <li>{{ cert }}</li>
+                {% endfor %}
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="resume-section">
+        <div class="section-title">Personal Projects</div>
+        <div class="section-content">
+            {% if project_names %}
+            {% for i in range(project_names|length) %}
+            <div class="project-item">
+                <div class="project-title">{{ project_names[i] }}</div>
+
+                {% if project_desc and project_desc|length > i %}
+                <div class="project-description">{{ project_desc[i] }}</div>
+                {% endif %}
+
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+
+    </div>
+
+    <div class="resume-section">
+        <div class="section-title">Work Experience</div>
+        <div class="section-content">
+            {% if company %}
+            {% for i in range(company|length) %}
+            <div class="experience-item">
+                {% if title and i < title|length %} <div class="job-title">{{ title[i] }}</div>
+            {% endif %}
+            <div class="job-company">{{ company[i] }}</div>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        {% if project_names_intern %}
+        <div class="section-title" style="margin-top: 15px;">Work Projects</div>
+        <div class="company-projects">
+            {% for j in range(project_names_intern|length) %}
+            <div class="company-project">
+                <div class="project-title">{{ project_names_intern[j] }}</div>
+                {% if project_desc_intern and j < project_desc_intern|length %} <div class="project-description">{{
+                    project_desc_intern[j] }}
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    </div>
+    </div>
+
+    <div class="more">
+        <a href="/">Upload another resume</a>
+        <a href="/ats_matcher">Check ATS Score</a>
+    </div>
+</body>
+
+</html>

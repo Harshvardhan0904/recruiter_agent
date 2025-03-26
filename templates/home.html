@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/home.css">
+    <title>Resume Upload</title>
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Resume Upload</h1>
+            <div class="subtitle">Upload your resume to apply for our open positions</div>
+        </header>
+        
+        <form action="/upload_resume" method="post" enctype="multipart/form-data">
+            <div class="upload-section">
+                <div class="form-section">
+                    
+                </div>
+                
+                <div class="upload-container" id="dropArea">
+                    <div class="upload-icon">📄</div>
+                    <input type="file" class="file-input" id="fileInput"  name="resume" accept=".pdf">
+                    <div class="upload-text">Drag & drop your resume or click to browse</div>
+                    <div class="upload-hint">Upload your most recent resume</div>
+                    <div class="file-types">(PDF)</div>
+                </div>
+                
+                
+    
+                <div class="success-message" id="successMessage">
+                    <div class="success-icon">✓</div>
+                    <h2>Resume Uploaded Successfully!</h2>
+                    <p>Thank you for your application. We'll review your resume and get back to you soon.</p>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <button type="submit" class="button" id="submitButton">Submit Application</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!--  -->
+</body>
+</html>

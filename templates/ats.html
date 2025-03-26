@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/ats.css">
+    <title>ATS Skill Matcher & Interview Prep</title>
+</head>
+
+<body>
+    <form id="atsMatcherForm" method="POST" action="/ats_matcher">
+        <div class="container">
+            <h1>ATS Skill Matcher & Interview Prep</h1>
+
+            <div class="input-group">
+                <label for="jobDescription">Job Description:</label>
+                <textarea id="jobDescription" name="job_description" placeholder="Paste the job description here..."
+                    required></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="skillList">Your Skills According to AGENT:</label>
+                {% if final_skill and final_skill|length > 0 %}
+                <div class="skills-list">
+                    {% for skill in final_skill %}
+                    <p class="skill-tag">{{ skill }}</p>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p style="color: white;">No skills detected. Please upload a resume or enter skills manually.</p>
+                {% endif %}
+            </div>
+
+            <div id="resultArea" style="border-left: 4px solid green;">
+                {%if ats_score%}
+                <h2>ATS Score: {{ ats_score }}</h2>
+                {%endif%}
+
+            </div>
+
+            <div id="suggestionBox">
+                {% if suggestions %}
+                <div class="suggestions-container">
+                    <p>Suggestions:</p>
+                    <ul>
+                        {% for suggestion in suggestions.split("\n") %}
+                        <li>{{ suggestion }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="button-group">
+                <button type="submit" id="matchButton">Calculate ATS Score</button>
+                <button><a href="/">Upload another resume</a></button>
+                <button><a href="/recent_jobs">find related Jobs </a></button>
+                <button><a href="/interviw">Get intervirew questions</a></button>
+            </div>
+
+            <div id="questionsArea" style="display:none;">
+                <h2>Interview Questions</h2>
+                <ul id="generatedQuestions"></ul>
+            </div>
+
+            
+        </div>
+    </form>
+
+</body>
+<script>
+    
+</script>
+
+
+</html>
